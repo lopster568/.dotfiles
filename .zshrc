@@ -36,6 +36,9 @@ autoload -U compinit && compinit
 # Keybindings
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+
 
 # Histroy
 HISTSIZE=5000
@@ -64,6 +67,17 @@ eval "$(fzf --zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
+# Nvim path
 export PATH="/opt/nvim-linux64/bin:$PATH"
 
+echo " ___       __   _______   ___       ________  ________  _____ ______   _______      "
+echo "|\  \     |\  \|\  ___ \ |\  \     |\   ____\|\   __  \|\   _ \  _   \|\  ___ \     "
+echo "\ \  \    \ \  \ \   __/|\ \  \    \ \  \___|\ \  \|\  \ \  \\\__\ \  \ \   __/|    "
+echo " \ \  \  __\ \  \ \  \_|/_\ \  \    \ \  \    \ \  \\\  \ \  \\|__| \  \ \  \_|/__  "
+echo "  \ \  \|\__\_\  \ \  \_|\ \ \  \____\ \  \____\ \  \\\  \ \  \    \ \  \ \  \_|\ \ "
+echo "   \ \____________\ \_______\ \_______\ \_______\ \_______\ \__\    \ \__\ \_______\ "
+echo "    \|____________|\|_______|\|_______|\|_______|\|_______|\|__|     \|__|\|_______|"
+echo ""
+echo "You are logged in as $USER - $(date)"
